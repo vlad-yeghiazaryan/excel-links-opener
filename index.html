@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <script src="./public/javascripts/cloudflare/jszip.js"></script>
+    <script
+      src="./public/javascripts/cloudflare/xlsx.full.min.js"
+      SameSite='None'></script>
+    <link
+      href="./public/stylesheets/bootstrap/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous">
+    <title>Excel Link Opener!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar"><span>Excel Link Opener - by YV </span></div>
+      <div class="input-group mb-3">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" type="file"
+            accept=".xls,.xlsx" id="excel_input" />
+          <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+        </div>
+        <div class="input-group-append">
+          <span class="input-group-text" id="">Upload</span>
+        </div>
+      </div>
+      <div id="tableHub">
+        <table id="linksTable" class="table">
+
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <iframe id='output_iframe1'></iframe>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./public/javascripts/renderer.js"></script>
+    <script src="./public/javascripts/excel.js"></script>
+  </body>
+</html>
